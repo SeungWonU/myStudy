@@ -12,9 +12,9 @@
 
 ## [5.알고리즘의 정당성 증명]
 
-## [6.무식하게 풀기][https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%206]
+## [6.무식하게 풀기](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%206)
 
-## [7.분할 정복][https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%207]
+## [7.분할 정복](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%207)
 
 ## [8.동적 계획법]
 
