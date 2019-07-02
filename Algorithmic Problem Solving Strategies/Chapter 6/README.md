@@ -24,7 +24,34 @@ return n+ recursiveSum(n-1);
 > #### 위 예제에서 n==1 일때 기저 사례이다.
 #### 기저 사례는 또한 재귀 호출에 반드시 존재해야 한다.
 
-* ### 예제: 중첩 반복문 대체하기
+* ### 예제: 보글 게임(난이도 : 하)
+보글은 5x5 크기의 알파벳 격자를 가지고 하는 게임이다. 이때 게임의 목적은 상하좌우/대각선으로 인접한 칸들의 글자들을 이어서 단어를 찾아내는 것이다.
+예를 들어 PRETTY,GIRL 등의 단어를 5x5 크기의 격자 안에서 찾을 수 있다. 각 글자들은 대각선으로도 이어질 수 있으며, 한 글자가 두 번 이상 찾을 수도 있다.
+> hasWord(y,x,word)=보글 게임판의 (y,x)에서 시작하는 단어 word의 존재 여부를 반환한다.
+
+```c++
+// 보글 게임 구현
+const int dx[8] = { -1, -1, -1, 1, 1, 1, 0, 0 };
+const int dy[8] = { -1,  0,  1,-1, 0, 1,-1, 1 };
+//5x5 보글 게임 판의 해당 위치에서 주어진 단어가 시작하는지를 반환
+bool hasWord(int y, int x, const string &word){
+//기저 사례 1 : 시작 위치가 범위 밖이면 무조건 실패
+if(!inRange(y,x)) return false;
+//기저 사례 2 : 첫 글자가 일치하지 않으면 실패
+if(board[y][x] != word[0]) return false;
+//기저 사례 3 : 단어 길이가 1 이면 성공
+if(word.size() == 1 ) return true;
+//인접한 여덟 칸을 검사한다
+for(int direction = 0; direction <8;++direction){
+int nextY = y+ dy[direction] , nextX = x+ dx[direction];
+//다음 칸이 범위 안에 있는지, 첫 글자는 일치하는지 확인할 필요가 없다.
+if(hasWord(nextY,nextX,word.substr(1))
+return true;
+
+}
+return false;
+}
+
 ## 6-3소풍 문제
 > #### 예제 출력을 해야 하는데 입력 밖에 작성 못함..
 ```c++
