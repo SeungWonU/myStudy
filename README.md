@@ -8,7 +8,7 @@
 
 ## [3.코딩과 디버깅에 관하여](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%203)
 
-## [4.알고리즘의 시간 복잡도 분석]
+## [4.알고리즘의 시간 복잡도 분석](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%204)
 
 ## [5.알고리즘의 정당성 증명](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%205)
 
