@@ -16,7 +16,7 @@
 
 ## [7.분할 정복](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%207)
 
-## [8.동적 계획법]
+## [8.동적 계획법](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%208)
 
 ## [9.동적 계획법 테크닉]
 
