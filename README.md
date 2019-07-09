@@ -2,6 +2,8 @@
 
 #### 2019/06/01 start
 
+## [My palns & study feelings] (https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/My%20Schedule)
+
 ## [1.문제 해결과 프로그래밍 대회](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%201)
 
 ## [2.문제 해결 개관](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%202)
