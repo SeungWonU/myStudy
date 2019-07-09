@@ -1,23 +1,23 @@
 # daily plans & study feelings
 ## 2019 daily plans
-### July
+* ### July
 #### 08 (월)
 1. 재귀 함수 youtube 강의 듣기
 2. 알고리즘(6장 다시 풀기) -- 절반까지
 #### 09 (화)
 1. 알고리즘(6장 끝내기) -- 내 코드작성 & 모르는 것 정리해 놓기
-### August
+* ### August
 
-### September
+* ### September
 
-### October
+* ### October
 
-### November
+* ### November
 
-### December
+* ### December
 
 ## study feelings
-### 1~2 weeks
+* ### 1~2 weeks
 #### 첫 스터디이고 수학엔 나름 자신이 있기 때문에 의지가 강했다. 1~5장 개념임에도 불구하고 어려웠다.(대회용 알고리즘 책이라 그런듯) 느낀점: 무조건 2번이상 읽고 나오는 코드마다 이해하지 않으면 뒤에 문제를 풀기 힘듬.
-### 3 weeks
+* ### 3 weeks
 #### 스터디 하기 전엔 두번씩 읽고 나름 잘 준비했다고 생각했지만 큰 문제가 있다. 어디까지 하든 그 전날 or 당일날에는 무조건 모르는 부분 검토하기! (이번엔 재귀 함수의 개념이 너무 부족했다)
