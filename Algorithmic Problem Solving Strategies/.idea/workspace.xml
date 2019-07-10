@@ -4,6 +4,7 @@
     <list default="true" id="c1c20ec7-d1c3-4ee4-a417-c84b16486594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chapter 6/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter 6/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My Schedule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/My Schedule/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,20 +23,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Chapter 6/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+            <state relative-caret-position="604">
+              <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/My Schedule/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="250">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -55,14 +56,13 @@
         <option value="$PROJECT_DIR$/Chapter 3/README.md" />
         <option value="$PROJECT_DIR$/Chapter 8/README.md" />
         <option value="$PROJECT_DIR$/Chapter 7/README.md" />
-        <option value="$PROJECT_DIR$/My Schedule/README.md" />
         <option value="$PROJECT_DIR$/Chapter 6/README.md" />
+        <option value="$PROJECT_DIR$/My Schedule/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="508" />
-    <option name="y" value="1" />
+    <option name="x" value="506" />
     <option name="width" value="1070" />
     <option name="height" value="815" />
   </component>
@@ -75,6 +75,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,11 +93,15 @@
               <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
               <item name="Chapter 7" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
+              <item name="My Schedule" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -134,7 +139,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14474554" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1442953" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -145,6 +150,7 @@
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="right" id="Assistant" weight="0.33489934" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -189,13 +195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/My Schedule/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Chapter 3/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -212,8 +211,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Chapter 6/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+        <state relative-caret-position="604">
+          <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/My Schedule/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
