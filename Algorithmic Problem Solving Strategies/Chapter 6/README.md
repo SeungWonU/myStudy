@@ -114,7 +114,7 @@ return ret;
 #### 다음 코드는 재귀 호출 알고리즘을 보여준다.
 1. 한 칸을 덮는 4가지 방법을 각각의 코드로 구현하는 것이 아니라 coverType[] 배열에 저장한다. 이 배열은 4가지 방법에서 새로 채워질 칸들의 상대 좌표(y,x)로 저장한다.
 2. set()은 delta에 따라 블록을 놓는 역할과 치우는 역할을 한다.
-3. set()은 해당 위치에 블록을 놓을 수 있는지 여부를 판단한다. 이때 곧장 함수를 종료하는 것이 아니라 마지막까지 함수를 실행한다. 만약
+3. set()은 해당 위치에 블록을 놓을 수 있는지 여부를 판단한다. 이때 곧장 함수를 종료하는 것이 아니라 마지막까지 함수를 실행한다.
 ```c++
 // 주어진 칸을 덮을 수 있는 4가지 방법
 // 블록을 구성하는 세 칸의 상대적 위치(dy,dx)의 목록
@@ -187,54 +187,70 @@ double dist[MAX][MAX]; // 두 도시 간의 거리를 저장하는 배열
 // visited : 각 도시의 방문 여부
 // currentLength : 지금까지 만든 경로의 길이
 // 나머지 도시들을 모두 방문하는 경로들 중 가장 짧은 것의 길이를 반환한다.
-double shortestPath(vector<int>& path
-
+double shortestPath(vector<int>& path, vector<bool> & visited, double currentLength){
+if(path.size() == n) //기저 사례 : 모든 도시를 다 방문했을 때 시작 도시로 돌아가고 종료
+    return currentLength + dist[path[0][path.back()];
+double ret = INF; // 매우 큰값으로 초기화
+// 다음 방문할 도시를 전부 시도해 본다.
+for(int next = 0; next< n ; ++next){
+    if(visited[next]) continue;
+    int here = path.back();
+    path.push_back(next);
+    visited[next] = true;
+    // 나머지 경로를 재귀 호출을 통해 완성하고 가장 짧은 경로의 길이를 반환한다
+    double cand = shortestPath(path,visited,currentLength + dist[here][next]);
+    ret = min(ret,cand);
+    visited[next] = false;
+    path.pop_back();
+}
+return ret;
+}
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## 6-8 시계 맞추기( 난이도 : 중)
+#### 4X4개의 격자 형태로 배치된 16개의 시계가 있다. 이 시계들은 모두 12,3,6,9시를 가리키는데, 모두 12시로 바꾸고 싶다. 시계를 조작하는 방법은 스위치를 조작해야 하며 스위치는 3~5개까지 연결되어 있다. 최소한으로 스위치를 누르는 횟수를 계산하라.
+## 6-9 풀이
+``` c++
+const int INF = 9999, SWITCHES = 10, CLOCKS =16;
+//linked[i][j] = 'x' : i번 스위치와 j번 시계가 연결됨
+//linked[i][j] = '.' : i번 스위치와 j번 시계가 연결되지 않음
+const char linked[SWITCHES][CLOCKS+1] = {
+// 0123456789012345
+   "xxx............"
+   "..x...x...x...."
+   "xx......x.x...."
+   "xxx.......x...."
+   "xx....x......x."
+   "xx.....x.....x."
+   "xxx..x........."
+   "xx..x.......x.."
+   "x.....x....x..."
+   }
+// 모든 시계가 12시를 가리키는지 확인한다.
+bool areAligned(const vector<int>& clocks);
+// swtch번 스위치를 누른다.
+void push(vector<int>& clocks, int swtch) {
+    for(int clock = 0; clocks < CLOCKS; ++clocks)
+        if(linked[swtch][clock] =='x') {
+            clocks[clock] += 3;
+            if(clocks[clock] == 15) clocks[clock] = 3;
+        }
+}
+// clocks : 현재 시계들의 상태
+// swtch : 이번에 누를 스위치의 번호
+// 남은 스위치들을 눌러서 clocks를 12시로 맞출 수 있는 최소 횟수를 반환한다.
+// 만약 불가능하다면 INF 이상의 큰 수를 반환한다.
+int solve(vector<int> & clocks, int swtch){
+ if(swtch == SWITCHES) return areAligned(clocks) ? 0 : INF;
+// 이 스위치를 0번 누르는 경우부터 3번 누르는 경우까지 모두 시도한다.
+int ret = INF;
+for(int cut = 0; cnt < 4 ;cnt++){
+    ret = min(ret, cnt+solve(clocks,swtch +1));
+    push(clocks, swtch);
+}
+// push(clocks,swtch)가 4번 호출되었으니 clocks는 원래 상태가 된다.
+return ret;
+}
+```
+## 6-10 많이 등장하는 완전 탐색 유형
+#### 순열 만들기 :서로 다른 N개의 원소를 일렬로 줄 세운 것을 순열(permutation)이라고 한다. 또한 서로 다른 N개의 원소 중에서 R개를 순서 없이 골라 낸 것을 조합(combination)이라고 한다.
+n개의 질문에 대한 답이 예/아니오 둘 중 하나라고 할때 답의 모든 조합의 수는 2^n 가지이다.
