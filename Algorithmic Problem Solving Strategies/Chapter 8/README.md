@@ -238,10 +238,14 @@ int width= firstWidth;
 int tiling(width){
 // 기저 사례 : width가 1이하 일때
 // 3가지 기저 사례를 추가한다
-// 1. firstWidth가 짝수일때  n/2과 n/2+1을 기준으로 하여 양옆이 대칭일때 2. firstWidth가 짝수일때 1~n/2와 n/2+1~n 까지가 대칭일때 3. firstWidth가 홀수이고 n/2+1을 기준사각형으로 양옆이 대칭일때
+// 1. firstWidth가 짝수일때  n/2과 n/2+1을 기준으로 하여 양옆이 대칭일때
+//2. firstWidth가 짝수일때 1~n/2와 n/2+1~n 까지가 대칭일때
+//3. firstWidth가 홀수이고 n/2+1을 기준사각형으로 양옆이 대칭일때
 if(width<=1)
     if((firstwidth % 2 ==0) && tiling(firstWidth/2 -1))
-//여기서 문제는 tiling()이거는 수를 반환하기때문에 내가 원하는 한쪽의 그림을 구할수가 없음.. 새로운 함수를 만들어서 지금까지 지나온 경로를 만든다. 기준점 반대편도 만들면 되는데 대칭은 거울처럼 봐야하는데 대칭하는 코드를 모르겠다.
+//여기서 문제는 tiling()이거는 수를 반환하기때문에 내가 원하는 한쪽의 그림을 구할수가 없음..
+//새로운 함수를 만들어서 지금까지 지나온 경로를 만든다.
+//기준점 반대편도 만들면 되는데 대칭은 거울처럼 봐야하는데 대칭하는 코드를 모르겠다.
 }
 ```
 ## 8-13 풀이
@@ -258,8 +262,8 @@ if(move== n) return 1;
 int& ret =  cache[y][x];
 
 // 캐쉬에서 y+1줄에있는 모든 x값을 비교해보면서 중복된값이 있을시 ( 지금 자리 양옆 제외하고 ) false;
-return ret = for(int i=0;i<move;i++)if(cache[y+1][i] != -1 && i !=x+1 && i != x+1 ) return false; ploy(y+1,x); //위
- + for(int i=0;i<move;i++)if(cache[y-1][i] != -1 && i !=x+1 && i != x+1 ) return false; ploy(y-1,x); //아래
+return ret=for(int i=0;i<move;i++)if(cache[y+1][i] != -1 && i !=x+1 && i != x+1 )return false; ploy(y+1,x);//위
++ for(int i=0;i<move;i++)if(cache[y-1][i] != -1 && i !=x+1 && i != x+1 )return false; ploy(y-1,x);//아래
  + ploy(y,x+1); //오른
  + ploy(y,x-1); //왼
 }
