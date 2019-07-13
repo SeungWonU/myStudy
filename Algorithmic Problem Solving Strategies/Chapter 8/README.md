@@ -282,7 +282,8 @@ int T;// 확률을 계산할 마을의 수
 int start , finish[T]; // 시작점, 끝점
 //day는 현재 날짜 arrive는 다음 목적지
 int k = 1;// 확률값을 곱해줌
-int runAway(int day,int start,int arrive) // 지금 시작점에서 도착점으로 도달했을때 확률값 반환한다. 재귀 호출을 통해 반환값을 곱한다. 끝까지 가서 원하는 날 원하는 목적지에 도달했으면 지금까지 곱한 확률값을 반환.
+int runAway(int day,int start,int arrive) // 지금 시작점에서 도착점으로 도달했을때 확률값 반환한다.
+ // 재귀 호출을 통해 반환값을 곱한다. 끝까지 가서 원하는 날 원하는 목적지에 도달했으면 지금까지 곱한 확률값을 반환.
 //시작할때는 day값과 start값만 넣어줌
 //day==D가 되고 지금 해당하는 점이 finish[T]안에 포함되면 true
 if(day==D )
