@@ -303,10 +303,8 @@ return 1/denom;
 for(star=0;star<Day;star++)
 { k = runAway(day+1,star) ;
   multiply *=k;
-
   k = 0;
 }
-
 ```
 >  273p 코드 ret /= deg[path[i]]가 확률까지 다계산됨 내가 필요했던 부분 & vector로 push,pop하는거 해야 하나 다끝내고 새거할때 필요
 #### 275 코드에서  here == q ? 1.0 : 0.0 이렇게 간단하게 쓸수있는거 참고!!
