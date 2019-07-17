@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c1c20ec7-d1c3-4ee4-a417-c84b16486594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapter 9/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter 9/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My Schedule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/My Schedule/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/My Schedule/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            <state relative-caret-position="325">
+              <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -30,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/Chapter 9/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="529">
-              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -38,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Chapter 8/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="311" lean-forward="true" selection-start-line="311" selection-end-line="311" />
+            <state relative-caret-position="7775">
+              <caret line="311" selection-start-line="311" selection-end-line="311" />
             </state>
           </provider>
         </entry>
@@ -79,8 +78,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,10 +95,17 @@
               <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
               <item name="Chapter 9" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
+              <item name="My Schedule" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,24 +213,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/My Schedule/README.md">
+    <entry file="file://$PROJECT_DIR$/Chapter 8/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="7775">
+          <caret line="311" selection-start-line="311" selection-end-line="311" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chapter 8/README.md">
+    <entry file="file://$PROJECT_DIR$/My Schedule/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="311" lean-forward="true" selection-start-line="311" selection-end-line="311" />
+        <state relative-caret-position="325">
+          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Chapter 9/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
