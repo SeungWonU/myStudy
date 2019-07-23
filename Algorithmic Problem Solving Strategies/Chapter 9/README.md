@@ -186,4 +186,104 @@ double shortestPath2(int here, int visited){
 1. 어떤 문자열 조각에도 포함되지 않는 문자를 더할 일은 없다.
 2. 연속해서 출현하는 문자열들의 접미사와 접두사를 최대한 많이 겹치게 해야한다.
 3. 한 문자열 조각이 다른 문자열에 포함될 경우 무시한다.
-#### 모든 답 만들어 보기: 문자열을 만드는 좋은 방법은 문자열 조각들이 어떤 순서로 출현할지를 정하는 것이다. 각 조각을 최대한 겹치도록 연결해야 한다.
+#### 모든 답 만들어 보기: 문자열을 만드는 좋은 방법은 문자열 조각들이 어떤 순서로 출현할지를 정하는 것이다. 각 조각을 최대한 겹치도록 연결해야 한다. a와b의 최대 몇 글자가 겹치는지 계산해 주는 overlap(a,b)가 있다고 하자.  문자열이 w1,w2,w3 ...wk 일때 w의 합 - overlap의 합을 구하면 원하는 문자열의 길이가 나온다.
+외판원 문제와 비슷하게 접근해 보면
+* restore(last,used) = 마지막에 출현한 조각 last와 지금까지 출현한 조각의 집합 used가 주어질 때, 나머지 조각을 추가해서 얻을 수 있는 overlaps()의 최대 합
+restore(last,used) = max(overlap(last,next)+restore(next,used U {next}))
+#### 최적해의 점수 계산하기 : overlap 과 restore 의 구현을 보여준다.
+``` c++
+// 실험 데이터 복구 문제를 해결하는 동적 계획법 알고리즘
+const int MAX_N = 15;
+int k;
+string word[MAX_N];
+int cache[MAX_N][1<<MAX_N], overlap[MAX_N][MAX_N];
+int restore(int last,int used) {
+//기저 사례
+if(used == (1<<k)-1) return 0;
+//메모이제이션
+int& ret = cache[last][used];
+if(ret != -1) return ret;
+ret = 0;
+for(int next=0; next<k; ++next)
+    if((used& (1<<next)) == 0 ){
+        int cand = overlap[last][next] + restore(next,used+(1<<next));
+        ret = max(ret,cand);
+    }
+    return ret;
+}
+```
+#### 이 코드는 O(k*2^k)개의 부분 문제에 대한 답을 각각 O(k)의 시간을 들여 계산하기 때문에 전체 시간 복잡도는 O(k^2*2^k)가 된다.
+#### 실제 문제의 답인 문자열을 찾기 : 아래 코드는 실제 문자열을 구현한 것이다. 다음 사항들을 유의해서 보자.
+1. restore()가 각 경우 최선의 선택을 별도의 배열에 기록해 두지 않았기 때문에, reconstruct()는 다음에 나와야 할 문자열 조각이 무엇인지를 직접 찾는다.
+2. 우리 코드가 정확하다면 다음에 나올 문자열 조각을 찾을 수 없는 경우는 없을 것이다. reconstruct()는 꼭 무언가를 반환해야 하므로 특수한 값을 리턴한다.(return ****ooops****)눈에 띄게 한다.
+``` c++
+// 처음 호출시 last는 recover()가 최댓값을 반환한 시작 단어로
+// used는 1<<last로 둔다.
+string reconstruct(int last, int used) {
+//기저 사례
+if(used == (1<<k)-1) return "";
+//다음에 올 문자열 조각을 찾는다.
+for(int next = 0; next< k; ++next) {
+    //next가 이미 사용되었으면 제외
+    if(used & (1<<next)) continue;
+    //next를 사용했을 경우의 답이 최적해와 같다면 next를 사용한다.
+    int ifUsed = restore(next, used + (1<<next)) + overlap[last][next];
+    if(restore(last,used) == ifUsed)
+        return (word[next].substr(overlap[last][next]) + reconstruct(next,used+(1<<next));
+}
+return "****ooops******";
+}
+이 코드는 문자열 조각 하나를 연결할 때마다 O(k)시간이 걸리는 반복문을 수행하므로 전체는 O(k^2)가 된다.
+## 9-16 조합 게임
+#### 동적 계획법의 또 다른 사용처는 여러 조합 게임(combinatorial game)을 해결하는 것이다. 조합 게임이란 체스나 바둑처럼 두 참가자가 하는 게임을 가리킨다. 게임 트리를 보면 완벽한 수의 개념을 쉽게 이해할 수 있다. 게임 트리의 맨 아래줄부터 시작하면 완벽하게 풀 수 있다. 하지만 그 전에 승부가 나거나 메모리도 많이 차지하기 때문에 위에서부터 내려오는(top down)재귀 호출 알고리즘을 사용한다.
+* winner(state,player) = 게임의 현재 상태가 state이고, player가 수를 둘 차례일 때 어느 쪽이 최종적으로 이길까?
+player 인자를 통해 누가 둘 차례인지 결정하는데 다음과 같이 정의하면 이런 정보가 필요 없다.
+* canWin(state) = 게임의 현재 상태가 state일 때, 이번에 수를 둘 차례인 참가자가 이길까?
+#### canWin은 이 상태에서 둘 수 있는 수를 하나 하나 순회하며, 해당 수를 둔 후의 상태 state에 대해 canWin을 호출한다. 이때 true가 되면 다음 차례 사람이 이기고, false라면 지금 한 내가 이기는 것이다.
+* ### 예제 : 틱택토(난이도 : 하)
+#### 상태 표현 : 틱택토는 3X3 크기의 3목 게임이다. O와 X로 자신의 말을 표현한다.
+* canWin(board) = 틱택토 게임판이 현재 board일 때 이번 차례인 사람이 이길 수 있는지 반환한다.
+#### 이 함수에 메모이제이션을 적용하려면 map에 곧장 vector<string>을 넣거나 게임판을 정수로 변환해 주는 일대일 함수를 구현해야 한다. 일대일 함수는 board를 아홉자리의 3진수 숫자로 보는 것이다.
+#### 비기는 게임 : 오목과 달리 비기는 경우가 있다.
+canWin(board) = 틱택토 게임판이 현재 board일 때 이번 차례인 사람이 이길 수 있으면 1을, 비길 수 있으면 0을, 질 수밖에 없으면 -1을 반환한다.
+#### 구현 : 이것을 유의해서 보자
+1. 이미 게임이 끝난 상태를 기저 사례로 한다. 처음 받은 게임판에 한 줄이 만들어져 있다면 마지막에 둔 사람이 승리한 것이니 이번 차례인 사람은 패배하게 된다.
+2. 함수의 반환 값이 -1이 될 수도 있기 때문에 cache[]의 초기값은 -2dlek.
+3. canWin에 현재 게임판의 상황 말고도 이번이 누구 차례인지를 turn으로 전달한다. 틱택토는 항상 X가 먼저 두기 때문에 이 정보는 board만 가지고도 알 수 있다만, 이렇게 하면 구현이 더 간단해진다. 사실 turn은 메모이제이션에 포함되지 않는다.
+4. canWin은 모든 수를 시도해 보며 반환 값 중 가장 작은 것을 찾는다.어떤 수를 두었을 때 -1 반환되었다면 내가 이길 수 있다는 뜻이고, -1이 없고 0이 있으면 비길 수 있기 떄문이다.
+``` c++
+// turn이 한 줄을 만들었는지를 반환한다.
+bool isFinished(const vector<string>& board, char turn);
+// 틱택토 게임판이 주어질 때 [0,19682] 범위의 정수로 변환한다.
+int bijection(const vector<string>& board) {
+    int ret = 0;
+    for(int y=0; y<3; y++)
+        for(int x=0; x<3; x++) {
+            ret = ret * 3;
+            if(board[y][x] == 'o') ++ret;
+            else if(board[y][x] == 'x') ret +=2;
+        }
+    return ret;
+}
+// cache[]는 -2로 초기화한다.
+int cache[19683];
+// 내가 이길 수 있으면 1을, 비길 수 있으면 0을, 지면 -1을 리턴한다.
+int canWin(vector<string>& board, char turn) {
+    // 기저 사례 : 마지막에 상대가 둬서 한 줄이 만들어진 경우
+    if(isFinished(board, 'o'+'x'-turn)) return -1;
+    int& ret = cache[bijection(board)];
+    if(ret != -2) return ret;
+    //모든 반환 값을 min을 취하자.
+    int minValue = 2;
+     for(int y=0; y<3; y++)
+            for(int x=0; x<3; x++)
+               if(board[y][x] == '.') {
+                board[y][x] == turn;
+                minValue = min(minValue, canWin(board, 'o'+'x'-turn));
+                board[y][x] = '.';
+               }
+        // 플레이할 수 없거나, 어떻게 해도 비기는 것이 최선인 경우
+        if(minValue == 2 || minValue == 0) return ret =0;
+        // 최선이 상대가 이기는 거라면 난 무조건 지고, 상대가 지는 거라면 난 이긴다.
+        return ret = -minValue;
+}
