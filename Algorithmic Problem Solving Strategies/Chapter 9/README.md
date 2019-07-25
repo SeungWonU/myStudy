@@ -287,3 +287,40 @@ int canWin(vector<string>& board, char turn) {
         // 최선이 상대가 이기는 거라면 난 무조건 지고, 상대가 지는 거라면 난 이긴다.
         return ret = -minValue;
 }
+## 9-17 문제 : 숫자 게임(난이도 : 하)
+#### n개의 정수를 일렬로 늘어놓은 게임판을 가지고 게임을 한다.
+## 풀이
+#### 이 문제는 승패도 중요하지만 얼마나 큰 점수 차이로 승부가 나는지가 중요하다.
+* play(state) = 현재 게임판에 남은 수들이 state일 때(이번 차례인 참가자의 점수) - (다른 참가자의 점수)의 최대치
+#### 상태 표현 :
+play(left,right) = max( board[left]-play(left+1,right), board[right]-play[left,right-1],-play(left+2,right),-play(left,right-2))
+#### play는 재귀 호출이 이루어지고 board는 게임판의 각 수를 저장하는 배열이다.
+``` c++
+// 숫자 게임 문제를 해결하는 동적 계획법 알고리즘
+const int EMPTY = -9123123;
+int n,board[50];
+int cache[50][50];
+int play(int left, int right) {
+// 기저 사례 : 모든 수가 다 없어졌을 때
+if(left > right) return 0;
+int& ret = cache[left][right];
+if(ret != EMPTY) return ret;
+//수를 가져가는 경우
+ret = max(board[left]-play(left+1,right), board[right]-play(left,right-1));
+//수를 없애는 경우
+if(right - left +1 >= 2) {
+    ret = max(ret, -play(left+2,right));
+    ret = max(ret, -play(left,right-2));
+}
+return ret;
+}
+```
+이 알고리즘은 O(n^2)의 시간이 걸린다.또한 인공지능 과목에서 배우는 미니맥스 알고리즘과 본질적으로 같다. 재귀함수의 정의를 다음과 같이 바꿔보자.
+* play(state,player) = 현재 게임판에 남은 수들이 state라고 가정하고, 이번 차례가 player라고 할때 (현우점수) - (서하 점수)
+#### 그러면 현우는 play의 반환 값을 가능한 한 최대화하고, 서하는 최소화하는 쪽으로 게임을 하게된다.이것을 미니맥스라고 부른다.
+## 9-19 문제 : 블록 게임(난이도 : 중)
+#### 5X5 크기의 게임판에서 시작해 둘이 번갈아 가며 블록을 하나씩 게임판에 내려놓는다. L모양의 3칸짜리 블록과 2칸자리 블록이 있으며, 항상 게임판에 있는 줄에 맞춰 놓아야 한다.더 올려놓을 곳이 없다면 게임은 끝이난다.
+## 풀이
+#### 상태 표현하기 : 이 게임은 양쪽이 둘 수 있는 수가 항상 같은 대칭 게임(impartial game)이다.
+* play(board) = 현재 게임판의 상태가 board일 때 이번 차례인 사람이 이길 방법이 있는지를 반환한다.
+#### 구현 : 이 코드를 비트 마스크를 사용해 더 간단하게 할 수 있다.
