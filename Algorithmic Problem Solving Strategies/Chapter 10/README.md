@@ -6,3 +6,36 @@
 2. 시간 or 공간적 제약으로 다른 방법의 최적해를 찾기가 어렵다면 최적해 대신 적당히 괜찮은 답(근사해)를 찾는 것으로 타협할 수 있다.
 #### 탐욕적 알고리즘은 주로 대회에서 첫 번째 용도로만 사용된다.
 * ### 예제: 회의실 예약
+#### 탐욕법이 유용하게 사용되는 문제는 활동 선택 문제(activity selection problem)가 있다. n개의 팀이 회의하고 싶은 시간을 제출했을 때 회의실은 하나이고, 겹치지 않고 회의를 진행하는 경우는 몇일까? 우리가 원하는 가장 좋은 답은 곧 최적해는 크기가 가장 큰 부분 집합이다.
+#### 탐욕적 알고리즘의 구상 : 가장 먼저 끝나는 회의부터 선택한다. 이것을 반복하는 알고리즘을 짠다.
+1. 목록 S에 남은 회의 중 가장 일찍 끝나는 회의 S(min)을 선택한다.
+2. S(min)과 겹치는 회의를 S에서 모두 지운다.
+3. S가 텅 빌 때까지 반복한다.
+### 정당성의 증명 : 탐욕적 선택 속성
+#### 탐욕적 알고리즘의 정당성 증명은 많은 경우 일정한 패턴을 가진다. 이 증명 패턴은 탐욕적인 알고리즘이 항상 최적해를 찾아낼 수 있다는 것을 두가지의 속성을 증명함으로써 보인다. 답의 모든 부분을 고려하지 않고 탐욕적으로만 선택하더라도 최적해를 구하는 것을 탐욕적 선택 속성(greedy choice property)라고 부른다. 이것이 성립할 경우, 각 단계에서 탐욕적으로 내리는 선택은 항상 최적해로 가는 길 중 하나이다. 이는 다음과 같은 말을 의미한다.
+ * 가장 종료 시간이 빠른 회의S(min)를 포함하는 최적해가 반드시 존재한다.
+#### 최적 부분 구조 : 첫 번째 선택을 하고 나서 남은 부분 문제는 최적이 아닌 방법으로 풀어야 하는 경우가 있는데 이것을 최적 부분 구조(optimal substructure)이라고 부른다.
+#### 구현 :
+```  c++
+// 각 회의는 [begin,end) 구간 동안 회의실을 사용한다.
+int n, begin[100],end[100];
+int schedule() {
+    // 일찍 끝나는 순서대로 정렬한다.
+    vector<pair<int,int> order;
+    for(int i=0; i<n; i++)
+        order.push_back(make_pair(end[i],begin[i]));
+    sort(order.begin(),order.end());
+    // earliest : 다음 회의가 시작할 수 있는 가장 빠른 시간
+    // selected : 지금까지 선택한 회의의 수
+    int earliest=0, selected=0;
+    for(int i=0;i<order.size();++i){
+        int meetingBegin = order[i].second, meetingEnd = order[i].first;
+        if(earliest <= meetingBegin) {
+        //earliest를 마지막 회의가 끝난 시간 이후로 갱신한다.
+        earliest = meetingEnd;
+        ++selected;
+        }
+    }
+    return selected;
+}
+```
