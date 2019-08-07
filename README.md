@@ -22,7 +22,7 @@
 
 ## [9.동적 계획법 테크닉](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%209)
 
-## [10.탐욕법]
+## [10.탐욕법](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%2010)
 
 ## [11.조합 탐색]
 
