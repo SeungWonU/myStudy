@@ -24,5 +24,7 @@
 
 ## [10.탐욕법](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%2010)
 
-## [11.조합 탐색]
+## [11.조합 탐색](https://github.com/SeungWonU/myproject/tree/master/Algorithmic%20Problem%20Solving%20Strategies/Chapter%2011)
+
+## [12.최적화 문제, 결정 문제로 바꿔 풀기]
 
