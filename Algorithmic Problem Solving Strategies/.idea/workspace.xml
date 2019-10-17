@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1c20ec7-d1c3-4ee4-a417-c84b16486594" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapter 15/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter 15/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chapter 3/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter 3/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,11 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Chapter 15/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Chapter 2/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Chapter 3/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -40,7 +57,6 @@
         <option value="$PROJECT_DIR$/Chapter 1/README.md" />
         <option value="$PROJECT_DIR$/Chapter 5/README.md" />
         <option value="$PROJECT_DIR$/Chapter 4/README.md" />
-        <option value="$PROJECT_DIR$/Chapter 3/README.md" />
         <option value="$PROJECT_DIR$/Chapter 6/README.md" />
         <option value="$PROJECT_DIR$/Chapter 7/README.md" />
         <option value="$PROJECT_DIR$/Chapter 8/README.md" />
@@ -52,10 +68,11 @@
         <option value="$PROJECT_DIR$/Chapter 14/README.md" />
         <option value="$PROJECT_DIR$/My Schedule/README.md" />
         <option value="$PROJECT_DIR$/Chapter 15/README.md" />
+        <option value="$PROJECT_DIR$/Chapter 3/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1010" />
     <option name="width" value="920" />
     <option name="height" value="1040" />
@@ -68,14 +85,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
               <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
+              <item name="Chapter 3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
@@ -91,6 +111,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -126,6 +148,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992908" visible="true" weight="0.13945803" />
@@ -156,13 +179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Chapter 2/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Chapter 5/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -174,13 +190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Chapter 3/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="63" column="28" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -257,7 +266,21 @@
     <entry file="file://$PROJECT_DIR$/Chapter 15/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chapter 2/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chapter 3/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
         </state>
       </provider>
     </entry>
