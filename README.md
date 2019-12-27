@@ -1,2 +1,0 @@
-# myStudy
-my first project
