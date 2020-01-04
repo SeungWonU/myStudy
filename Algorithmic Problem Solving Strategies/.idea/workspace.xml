@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92512d04-9689-40f6-be91-c5c14213092d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java Programming/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Java Programming/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java Programming/Chapter/Chapter 1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Java Programming/Chapter/Chapter 1/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java Programming/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Java Programming/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java Programming 1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Java Programming 1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java Programming 1/Chapter/Chapter 1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Java Programming 1/Chapter/Chapter 1/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/My Schedule/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="600">
-              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -31,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/Chapter/Chapter 12/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="350">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <caret line="14" column="70" lean-forward="true" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -64,6 +62,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -71,39 +70,10 @@
               <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
               <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
-              <item name="Chapter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
-              <item name="Chapter" type="462c0819:PsiDirectoryNode" />
-              <item name="Chapter 12" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
-              <item name="Chapter" type="462c0819:PsiDirectoryNode" />
-              <item name="Chapter 13" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
-              <item name="Chapter" type="462c0819:PsiDirectoryNode" />
-              <item name="Chapter 15" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Algorithmic Problem Solving Strategies" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Algorithmic Problem Solving Strategies" type="462c0819:PsiDirectoryNode" />
-              <item name="My Schedule" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -162,7 +132,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4992908" weight="0.24586913" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4992908" visible="true" weight="0.24586913" />
       <window_info id="Structure" order="2" sideWeight="0.50070924" side_tool="true" weight="0.24586913" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -207,7 +177,7 @@
     <entry file="file://$PROJECT_DIR$/My Schedule/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -217,7 +187,7 @@
     <entry file="file://$PROJECT_DIR$/Chapter/Chapter 12/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <caret line="14" column="70" lean-forward="true" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
         </state>
       </provider>
     </entry>
