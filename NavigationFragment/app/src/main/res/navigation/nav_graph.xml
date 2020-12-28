@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/london_screen">
+
+    <fragment
+        android:id="@+id/london_screen"
+        android:name="com.example.navigationfragment.LondonScreen"
+        android:label="London screen"
+        tools:layout="@layout/fragment_london_screen">
+        <action android:id="@+id/action_london_screen_to_paris_screen"
+            app:destination="@id/paris_screen"/>
+        <action android:id="@+id/action_london_screen_to_italy_screen"
+            app:destination="@id/italy_screen"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/paris_screen"
+        android:name="com.example.navigationfragment.ParisScreen"
+        android:label="Paris screen"
+        tools:layout="@layout/fragment_paris_screen">
+        <action android:id="@+id/action_paris_screen_to_italy_screen"
+            app:destination="@id/italy_screen"/>
+        <action android:id="@+id/action_paris_screen_to_london_screen"
+            app:destination="@id/london_screen"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/italy_screen"
+        android:name="com.example.navigationfragment.ItalyScreen"
+        android:label="Italy screen"
+        tools:layout="@layout/fragment_italy_screen">
+        <action android:id="@+id/action_italy_screen_to_paris_screen"
+            app:destination="@id/paris_screen"/>
+        <action android:id="@+id/action_italy_screen_to_london_screen"
+            app:destination="@id/london_screen"/>
+    </fragment>
+
+</navigation>
