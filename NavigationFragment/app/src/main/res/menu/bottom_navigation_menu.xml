@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+<item android:id="@+id/home"
+    android:title="Home"
+    app:showAsAction="always"
+    android:orderInCategory="1"
+    android:icon="@drawable/ic_baseline_home_24"/>
 
-    <item
-        android:id="@+id/page_home"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_home_24"
-        android:title="홈"/>
+<item android:id="@+id/explore"
+    android:title="Explore"
+    app:showAsAction="always"
+    android:orderInCategory="2"
+    android:icon="@drawable/ic_baseline_tv_24"/>
 
-    <item
-        android:id="@+id/page_tv"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_tv_24"
-        android:title="TV"/>
 
-    <item
-        android:id="@+id/page_calendar"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_calendar_today_24"
-        android:title="일정"/>
+<item android:id="@+id/more"
+    android:title="More"
+    app:showAsAction="always"
+    android:orderInCategory="2"
+    android:icon="@drawable/ic_baseline_calendar_today_24"
+    />
+
 </menu>
