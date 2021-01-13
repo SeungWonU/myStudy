@@ -14,4 +14,4 @@ data class Subscriber(
     val name: String,
     @ColumnInfo(name = "subscriber_email")
     val email: String
-)
+) 
