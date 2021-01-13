@@ -3,9 +3,11 @@ package kr.teamcadi.mvvmpractice
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import kr.teamcadi.mvvmpractice.databinding.ActivityMainBinding
 import kr.teamcadi.mvvmpractice.db.SubscriberDAO
 import kr.teamcadi.mvvmpractice.db.SubscriberDatabase
@@ -25,10 +27,18 @@ class MainActivity : AppCompatActivity() {
         binding.myViewModel = subscriberViewModel
 
         binding.lifecycleOwner = this
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView(){
+        binding.subscriberRecyclerView.layoutManager = LinearLayoutManager(this)
         displaySubscribersList()
+
     }
 
     private fun displaySubscribersList() {
-        subscriberViewModel.subscribers.observe(this, Observer { Log.i("MYTAG",it.toString()) })
+        subscriberViewModel.subscribers.observe(this, Observer { Log.i("MYTAG",it.toString())
+            binding.subscriberRecyclerView.adapter = MyRecyclerViewAdapter(it)
+        })
     }
 }

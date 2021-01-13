@@ -1,19 +1,26 @@
 package kr.teamcadi.mvvmpractice
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import kr.teamcadi.mvvmpractice.databinding.ListItemBinding
 import kr.teamcadi.mvvmpractice.db.Subscriber
 
-class MyRecyclerViewAdapter(private val subscribers: List<Subscriber>) : RecyclerView.Adapter<MyViewHolder>(){
+class MyRecyclerViewAdapter(private val subscribersList: List<Subscriber>) : RecyclerView.Adapter<MyViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val binding: ListItemBinding = DataBindingUtil.inflate(layoutInflater,R.layout.list_item,parent,false)
+        return MyViewHolder(binding)
 
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.bind(subscribersList[position])
     }
 
     override fun getItemCount(): Int {
+        return subscribersList.size
     }
 
 }
