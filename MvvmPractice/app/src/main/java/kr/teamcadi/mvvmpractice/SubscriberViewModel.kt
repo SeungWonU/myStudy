@@ -13,7 +13,8 @@ import kr.teamcadi.mvvmpractice.db.SubscriberRepository
 class SubscriberViewModel(private val repository: SubscriberRepository) : ViewModel(),Observable {
 
     val subscribers = repository.subscribers
-
+    private var isUpdateOrDelete = false
+    private lateinit var subscriberToUpdateOrDelete : Subscriber
     @Bindable
     val inputName = MutableLiveData<String>()
     @Bindable
@@ -30,16 +31,26 @@ class SubscriberViewModel(private val repository: SubscriberRepository) : ViewMo
     }
 
     fun saveOrUpdate(){
-        val name : String = inputName.value!!
-        val email : String = inputEmail.value!!
-        insert(Subscriber(0,name,email))
-        inputName.value = null
-        inputEmail.value = null
+        if(isUpdateOrDelete){
+            subscriberToUpdateOrDelete.name = inputName.value!!
+            subscriberToUpdateOrDelete.email = inputEmail.value!!
+            update(subscriberToUpdateOrDelete)
+        }else{
+            val name : String = inputName.value!!
+            val email : String = inputEmail.value!!
+            insert(Subscriber(0,name,email))
+            inputName.value = null
+            inputEmail.value = null
+        }
+
     }
 
     fun clearAllOrDelete(){
-        clearAll()
-
+        if(isUpdateOrDelete){
+            delete(subscriberToUpdateOrDelete)
+        }else{
+            clearAll()
+        }
     }
     fun insert(subscriber: Subscriber) : Job = viewModelScope.launch{
         viewModelScope.launch {
@@ -49,11 +60,23 @@ class SubscriberViewModel(private val repository: SubscriberRepository) : ViewMo
     fun update(subscriber: Subscriber) : Job = viewModelScope.launch{
         viewModelScope.launch {
             repository.update(subscriber)
+            inputName.value = null
+            inputEmail.value = null
+            isUpdateOrDelete  = false
+            subscriberToUpdateOrDelete = subscriber
+            saveOrUpdateButtonText.value = "Save"
+            clearAllOrDeleteButtonText.value = "Clear All"
         }
     }
     fun delete(subscriber: Subscriber) : Job = viewModelScope.launch{
         viewModelScope.launch {
             repository.delete(subscriber)
+            inputName.value = null
+            inputEmail.value = null
+            isUpdateOrDelete  = false
+            subscriberToUpdateOrDelete = subscriber
+            saveOrUpdateButtonText.value = "Save"
+            clearAllOrDeleteButtonText.value = "Clear All"
         }
     }
     fun clearAll() : Job = viewModelScope.launch{
@@ -61,6 +84,16 @@ class SubscriberViewModel(private val repository: SubscriberRepository) : ViewMo
             repository.deleteAll()
         }
     }
+    fun initUpdateAndDelete(subscriber: Subscriber) {
+        inputName.value = subscriber.name
+        inputEmail.value = subscriber.email
+        isUpdateOrDelete  = true
+        subscriberToUpdateOrDelete = subscriber
+        saveOrUpdateButtonText.value = "Update"
+        clearAllOrDeleteButtonText.value = "Delete"
+
+    }
+
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
     }
