@@ -8,7 +8,10 @@ import kr.teamcadi.mvvmpractice.databinding.ListItemBinding
 import kr.teamcadi.mvvmpractice.db.Subscriber
 import kr.teamcadi.mvvmpractice.generated.callback.OnClickListener
 
-class MyRecyclerViewAdapter(private val subscribersList: List<Subscriber>,private val clickListener:(Subscriber)->Unit) : RecyclerView.Adapter<MyViewHolder>(){
+class MyRecyclerViewAdapter(private val clickListener:(Subscriber)->Unit) : RecyclerView.Adapter<MyViewHolder>(){
+
+    private val subscribersList = ArrayList<Subscriber>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: ListItemBinding = DataBindingUtil.inflate(layoutInflater,R.layout.list_item,parent,false)
@@ -24,6 +27,10 @@ class MyRecyclerViewAdapter(private val subscribersList: List<Subscriber>,privat
         return subscribersList.size
     }
 
+    fun setList(subscribers: List<Subscriber>){
+        subscribersList.clear()
+        subscribersList.addAll(subscribers)
+    }
 }
 
 class MyViewHolder(val binding: ListItemBinding): RecyclerView.ViewHolder(binding.root){
